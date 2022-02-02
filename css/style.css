@@ -49,10 +49,6 @@ header {
     font-size: 24px;
 }
 
-.header-nav {
-
-}
-
 .header-nav-item {
     float: left;
     margin-left: 50px;
@@ -62,4 +58,44 @@ header {
     font-size: 15px;
     font-weight: 600;
     line-height: 36px;
+}
+
+/* section共通クラス */
+
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* about */
+
+.about-left {
+    float: left;
+    width: 48%;
+}
+
+.about-right {
+    float: right;
+    width: 48%;
+}
+
+/* course */
+
+.course {
+    background-color: #e3fcf4;
+}
+
+.course-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-item {
+    width: 30%;
 }
