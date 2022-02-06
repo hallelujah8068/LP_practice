@@ -52,6 +52,17 @@ header {
 .header-nav-item {
     float: left;
     margin-left: 50px;
+    list-style: none;
+    cursor: pointer;
+
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown-menu li {
+    display: inline-block;
 }
 
 .header-nav-item a {
