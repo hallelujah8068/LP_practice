@@ -170,6 +170,23 @@ input[type="email"] {
     margin: auto;
 }
 
+/* page_top */
+
+.page_top {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+}
+
+.page_top a {
+    font-size: 20px;
+    background-color: #082b48;
+    color: #fff;
+    padding: 18px 20px;
+    border-radius: 999px;
+}
+
+
 /* footer */
 
 footer {
