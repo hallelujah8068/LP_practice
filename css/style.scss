@@ -1,0 +1,122 @@
+$base-color: #082b48;
+$image-width: 100%;
+$image-height: auto;
+$link-text-decoration: none;
+$link-color: #082b48;
+
+$breakpoints: (
+//キー　　値
+ 'sm': 'screen and (min-width: 576px)',
+ 'md': 'screen and (min-width: 768px)',
+ 'lg': 'screen and (min-width: 992px)',
+ 'xl': 'screen and (min-width: 1200px)'
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+
+body {
+    color: $base-color;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    width: $image-width;
+    height: $image-height;
+}
+
+a {
+    text-decoration: $link-text-decoration;
+    color: $link-color;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 980px;
+    margin: auto;
+} 
+
+.clear::after {
+    content: "";
+    clear: both;
+    display: block;
+
+    @include mq(sm) {
+        content: none;
+    }
+}
+
+header {
+    padding: 20px;
+
+    .header-left {
+        float: left;
+
+        @include mq(sm) {
+            float: none;
+        }
+
+        .header-title {
+            font-weight: bold;
+            font-size: 24px;
+
+            @include mq(sm) {
+                text-align: center;
+            }
+        }
+    }
+
+    .header-right {
+        float: right;
+
+        @include mq(sm) {
+            float: none;
+        }
+
+        .header-nav {
+            @include mq(sm) {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .header-nav-item {
+                float: left;
+                margin-left: 50px;
+                list-style: none;
+                cursor: pointer;
+
+                @include mq(sm) {
+                    float: none;
+                    margin: 0;
+                }
+
+                .header-nav-item a {
+                    font-size: 15px;
+                    font-weight: 600;
+                    line-height: 36px;
+                }
+
+                .dropdown-menu {
+                    display: none;
+
+                    .header-nav-item a {
+                        font-size: 15px;
+                        font-weight: 600;
+                        line-height: 36px;
+                    }
+                }
+            }
+        }
+    }
+}
